@@ -44,14 +44,11 @@ if(${CMAKE_CXX_STANDARD} LESS 17)
 endif()
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-
 option(ENABLE_RTTI "Enables RTTI" OFF)
 option(SPIRV_ALLOW_TIMERS "Allow timers via clock_gettime on supported platforms" ON)
 
-
 if(DEFINED SPIRV_OVERRIDE_PLATFORM_CL)
 	add_definitions(${SPIRV_OVERRIDE_PLATFORM_CL})
-	message(STATUS "${SPIRV_OVERRIDE_PLATFORM_CL}")
 else()
 	if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
 	  add_definitions(-DSPIRV_LINUX)
